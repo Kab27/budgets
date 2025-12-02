@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+   <link rel="stylesheet" type="text/css" href="style1.css">
+   <link rel="shortcut icon" type="../image/x-icon" href="logo_sm.png">
+
+<link href="../../assets/libs/ladda/ladda-themeless.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+<link href="../../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+<link href="../../assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled />
+<link href="../../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet"  disabled />
+<link href="../../assets/css/icons.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../../assets/css/font-awesome.min.css">
+<link href="../../assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+<link href="../../assets/libs/dropify/css/dropify.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/datatables.net-select-bs4/css/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+<link href="../../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+<link href="../../assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled />
+<link href="../../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet"  disabled />
+<link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css">
+<link href="../../assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/libs/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body style="user-select: none;" oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
+   <div id="wrapper">
+      <!-- Barre de navigation supérieure -->
+      <div class="navbar-custom" id="haut">
+         <div class="container-fluid">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+               <li class="dropdown notification-list topbar-dropdown">
+                  <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light"
+                     data-toggle="dropdown"
+                     onclick="window.location.href='#'"
+                     role="button"
+                     aria-haspopup="false"
+                     aria-expanded="false">
+                                             <img src="profil.jpg" class="rounded-circle" />
+                                       </a>
+                  <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                     <a style="color: black;"
+                        onclick="window.location.href='profil'"
+                        class="dropdown-item btn-xs notify-item">
+                        <i class="fe-user"></i>
+                        <span>Profil</span>
+                     </a>
+                     <a style="color: black;"
+                        onclick="window.location.href='a-'"
+                        class="dropdown-item btn-xs notify-item">
+                        <i class="mdi mdi-information-outline"></i>
+                        <span>Apropos de <b>Sun300</b></span>
+                     </a>
+                     <div class="dropdown-divider"></div>
+                     <a onclick="window.location.href='../../config/logout'"
+                        class="dropdown-item notify-item btn-xs text-danger">
+                        <i class="fe-log-out"></i>
+                        <span>Deconnexion</span>
+                     </a>
+                  </div>
+               </li>
+            </ul>
+            <!-- Logo -->
+            <div class="logo-box" onclick="window.location.href='./'">
+               <a class="logo logo-light text-center">
+                  <span class="logo-sm">
+                     <img src="logo_sm.png" height="50">
+                  </span>
+                  <span class="logo-lg">
+                     <img src="logo.png" alt="" height="55">
+                  </span>
+               </a>
+            </div>
+            <!-- Menu mobile -->
+            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+               <li>
+                  <button class="button-menu-mobile waves-effect waves-light">
+                     <i id="text_haut" class="fe-menu"></i>
+                  </button>
+               </li>
+               <li>
+                  <a id="text_haut"
+                     class="navbar-toggle nav-link"
+                     data-toggle="collapse"
+                     data-target="#topnav-menu-content">
+                     <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                     </div>
+                  </a>
+               </li>
+            </ul>
+            <div class="clearfix"></div>
+         </div>
+      </div>
+      <!-- Menu latéral -->
+      <div class="left-side-menu" id="bas">
+         <div class="h-100" data-simplebar>
+            <div id="sidebar-menu">
+               <ul id="side-menu">
+                  <li style="font-size: 15px; font-weight: bold;color: white"
+                      id="ok"
+                      class="menu-title text-center">
+                      Navigation
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='./'">
+                        <i id="ok" class="fab fa-delicious"></i>
+                        <span id="ok">Vue globale</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='cours'">
+                        <i id="ok" class="fe-book"></i>
+                        <span id="ok">Cours</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a id="ok" href="#horaire" data-toggle="collapse">
+                        <i id="ok" class="mdi mdi-camera-timer"></i>
+                        <span id="ok">Horaire</span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <div class="collapse" id="horaire">
+                        <ul class="nav-second-level">
+                           <li id="ok">
+                              <a id="ok" onclick="window.location.href='horaire-cours'">
+                                 Horaire des cours
+                              </a>
+                           </li>
+                           <li id="ok">
+                              <a id="ok" onclick="window.location.href='horaire-examen'">
+                                 Horaire des examens
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='panoucia-ai'">
+                        <i id="ok" class="mdi mdi-brain"></i>
+                        <span id="ok">Panoucia IA</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='message'">
+                        <i id="ok" class="icon-envelope"></i>
+                        <span id="ok">Messages </span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='notification'">
+                        <i id="ok" class="mdi mdi-bell-outline"></i>
+                        <span id="ok">Notification </span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='deliberation'">
+                        <i id="ok" class="mdi mdi-chart-pie"></i>
+                        <span id="ok">Délibération</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='recours'">
+                        <i id="ok" class="fas fa-code-branch"></i>
+                        <span id="ok">Recours</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='sujet_travail'">
+                        <i id="ok" class="mdi mdi-expand-all-outline"></i>
+                        <span id="ok">Sujet travail</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='valve'">
+                        <i id="ok" class="mdi mdi-information-outline"></i>
+                        <span id="ok">Valve </span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='budget'">
+                        <i id="ok" class="fe-dollar-sign"></i>
+                        <span id="ok">Mon budget</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='sunlite'">
+                        <i id="ok" class="fas fa-people-arrows"></i>
+                        <span id="ok">SunLite  </span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='rapport-paiement'">
+                        <i id="ok" class="fa fa-history"></i>
+                        <span id="ok">Rapport paiement</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='stage'">
+                        <i id="ok" class="fas fa-wind text-blue"></i>
+                        <span id="ok">Stage</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='fiche-scolarite'">
+                        <i id="ok" class="far fa-file-alt"></i>
+                        <span id="ok">Fiche de scolarité</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='cours-a-valider'">
+                        <i id="ok" class="fas fa-burn text-danger"></i>
+                        <span id="ok">Crédits à valider</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='cours-dispense'">
+                        <i id="ok" class="fas fa-check-circle "></i>
+                        <span id="ok">Cours dispensés</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='carte'">
+                        <i id="ok" class="fas fa-credit-card"></i>
+                        <span id="ok">Carte d'étudiant</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='tuto-sun300'">
+                        <i id="ok" class="fas fa-video text-success"></i>
+                        <span id="ok">Tutoriels Sun300</span>
+                     </a>
+                  </li>
+
+                  <li id="nana">
+                     <a onclick="window.location.href='https://www.unhsun300.com//config/logout'">
+                        <i id="ok" class="fe-log-out"></i>
+                        <span id="ok">Deconnexion</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+      </div>
+   </div></head>
+
+</div>
+<!-- End of sidebar-menu and wrapper -->
+<div class="content-page">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                     <h4 class="mb-sm-0" style="font-family: Sans;">Mon budget</h4>
+                     <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                           <li class="breadcrumb-item">
+                              <a onclick="window.location.href='./'"><i class="mdi mdi-home text-muted"></i></a>
+                           </li>
+                           <li class="breadcrumb-item active">Mon budget</li>
+                        </ol>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-6 mx-auto">
+
+                  <div class="budget-container bg-white p-1" style="border-radius: 12px;">
+                     <div class="text-center">
+                                                   <img src="pp.png" class="rounded-circle" />
+                                                  <a data-toggle="modal" data-target="#modal_ajout"  class="btn btn-lg btn-success text-white mt-3"> Vérifier l'étudiant <i class="fa fa-check-circle"></i>   </a>
+                     </div>
+                  <hr class="my-2">
+
+                     <div class="budget-header text-dark mb-0 p-1">
+                        <h5 style="font-size: 14px;">Vos frais académiques pour 2025-2026</h5>
+                     </div>
+
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 CREDIT                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-paid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $150.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $150.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                 </div>
+
+                                                               </div>
+                           </div>
+                                   <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                <button onclick="window.location.href='budget-rapport?/=NGppZ0syNWFEdXVXNnR0RmliMWNVUT09'" class="btn btn-sm btn-white m-1" style="border-radius: 20px;">Rapport de paiement <i class="fa fa-history"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Frais de Reinscription                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-paid">
+                                    <i class="fas fa-check-circle me-1"></i> Payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $50.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $50.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                 </div>
+                                                               </div>
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                <button onclick="window.location.href='budget-rapport?/=NGppZ0syNWFEdXVXNnR0RmliMWNVUT09'" class="btn btn-sm btn-white m-1" style="border-radius: 20px;">Rapport de paiement <i class="fa fa-history"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Frais de fiche de proposition des sujets                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-paid">
+                                    <i class="fas fa-check-circle me-1"></i> Payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                 </div>
+                                                               </div>
+
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                <button onclick="window.location.href='budget-rapport?/=TFBPdWxIUjA2MTVGelJ2T0xnUnFHUT09'" class="btn btn-sm btn-white m-1" style="border-radius: 20px;">Rapport de paiement <i class="fa fa-history"></i> </button> 
+
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Frais de session                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-unpaid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> Non-payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $20.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $20.00                                    </span>
+                                 </div>
+
+                                                               </div>
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                                                        <button onclick="window.location.href='budget-paye?/=cEFOT1lFaUlQMnV3TXVIL0RKaWFxUT09'" class="btn btn-sm btn-blue m-1" style="border-radius: 20px;">Payer maintenant <i class="fa fa-check-circle"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Frais de Laboratoire                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-paid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $200.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $200.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                 </div>
+                                                               </div>
+                           </div>
+                                     <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                <button onclick="window.location.href='budget-rapport?/=NGppZ0syNWFEdXVXNnR0RmliMWNVUT09'" class="btn btn-sm btn-white m-1" style="border-radius: 20px;">Rapport de paiement <i class="fa fa-history"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Minerval premiere tranche                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-paid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                 </div>
+                                                               </div>
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                <button onclick="window.location.href='budget-rapport?/=NGppZ0syNWFEdXVXNnR0RmliMWNVUT09'" class="btn btn-sm btn-white m-1" style="border-radius: 20px;">Rapport de paiement <i class="fa fa-history"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Minerval deuxieme tranche                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-unpaid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> Non-payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                 </div>
+                                                               </div>
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                                                        <button onclick="window.location.href='budget-paye?/=OWRDYkNBOG5IUkVsVzNDMzA3QiszQT09'" class="btn btn-sm btn-blue m-1" style="border-radius: 20px;">Payer maintenant <i class="fa fa-check-circle"></i> </button>
+                                    </div>
+                        </div>
+                                             <div class="budget-item border">
+                           <div class="budget-item-header">
+                              <h5 class="budget-title mb-0" style="color: #0F305B !important; font-size: 14px">
+                                 Minerval troisieme tranche                              </h5>
+                                                               <span style="white-space: nowrap;" class="budget-status status-unpaid" style="white-space: nowrap;">
+                                    <i class="fas fa-ban me-1"></i> Non-payé
+                                 </span>
+                                                         </div>
+                           <div class="budget-details p-1">
+                              <div>
+                                 <div class="d-flex justify-content-between">
+                                    <span class="budget-amount amount-cdf  badge bg-dark w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-success w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-right: 4px;margin-left: 2px;font-size: 12px;">
+                                       $0.00                                    </span>
+                                    <span class="budget-amount amount-cdf  badge bg-danger w-100" style="padding: 4px;color: white !important;font-weight: normal;margin-left: 2px;font-size: 12px;">
+                                       $600.00                                    </span>
+                                 </div>
+                                                               </div>
+                           </div>
+                                    <div style="text-align: right;" class="border-top bg-light d-flex justify-content-center">
+                                                                                                                        <button onclick="window.location.href='budget-paye?/=ZE1QUWZ3M3ZhMnFqcVJ0UU5OUG9ydz09'" class="btn btn-sm btn-blue m-1" style="border-radius: 20px;">Payer maintenant <i class="fa fa-check-circle"></i> </button>
+                                    </div>
+                        </div>
+                     <div class="summary-cards">
+                        <div class="summary-card card-total p-1">
+                           <div class="summary-card-title">Total à payer</div>
+                           <div class="summary-card-amount text-dark">
+                              $2,220.00<br>
+                              CDF 0.00                           </div>
+                        </div>
+                        <div class="summary-card card-paid p-1">
+                           <div class="summary-card-title">Total payé</div>
+                           <div class="summary-card-amount text-success">
+                              $1000.00<br>
+                              CDF 0.00                           </div>
+                        </div>
+                        <div class="summary-card card-remaining p-1">
+                           <div class="summary-card-title">Reste à payer</div>
+                           <div class="summary-card-amount text-danger">
+                              $1,220.00<br>
+                              CDF 0.00                           </div>
+                        </div>
+                     </div>
+                                       </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+               <div id="modal_ajout" class="modal fade" data-backdrop="static" tabindex="-1" aria-labelledby="modal_ajoutLabel" aria-hidden="true" style="display: none;">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h4 class="modal-title" id="modal_ajoutLabel" style="font-family: Sans;color: #EA9E02;">Vérification de l'étudiant</h4>
+                        <button type="button" class="btn-close btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                     </div>
+                     <div class="modal-body">
+                        <div class="text-center">
+                                                         <img src="../../controller/profil/43815717609737712025-10-20 51.png" class="rounded-circle" />
+                        </div>
+                        <div class=" mt-3 text-center">
+                           <span style="font-size: 20px; font-weight: bold;color: red"> ILUNGA  KABALE  DAN </span>
+                        </div>
+                        <div class="modal-footer" style="margin-right: -18.5px;">
+                           <button class="btn btn-light" data-dismiss="modal">Fermer</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+<div class="rightbar-overlay"></div>
+<script src="../../assets/js/vendor.min.js"></script>
+<script src="../../assets/libs/flatpickr/flatpickr.min.js"></script>
+<script src="../../assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/libs/selectize/js/standalone/selectize.min.js"></script>
+<script src="../../assets/js/pages/dashboard-1.init.js"></script>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/app.min.js"></script>
+<script src="../../assets/libs/sweetalert2/sweetalert2.min.js"></script>
+<script src="../../assets/js/pages/sweet-alerts.init.js"></script>
+<script src="../../assets/libs/ladda/spin.min.js"></script>
+<script src="../../assets/libs/ladda/ladda.min.js"></script>
+<script src="../../assets/js/pages/loading-btn.init.js"></script>
+<script src="../../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="../../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="../../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
+<script src="../../assets/libs/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../assets/libs/pdfmake/build/vfs_fonts.js"></script>
+<script src="../../assets/js/pages/datatables.init.js"></script>
+<script src="../../assets/libs/dropzone/min/dropzone.min.js"></script>
+<script src="../../assets/libs/dropify/js/dropify.min.js"></script>
+<script src="../../assets/js/pages/form-fileuploads.init.js"></script>
+<script src="../../assets/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="../../assets/js/pages/gallery.init.js"></script>
+<script src="../../assets/libs/selectize/js/standalone/selectize.min.js"></script>
+<script src="../../assets/libs/select2/js/select2.min.js"></script>
+<script src="../../assets/js/pages/form-advanced.init.js"></script>
+<link href="../../assets/toast_mob/toastr.css" rel="stylesheet">
+<script src="../../assets/toast_mob/jquery-1.12.4.minss.js" ></script>
+<script src="../../assets/toast_mob/toastr.js"></script>
+<script src="../../assets/alertify/jquery.misn.js"></script>
+<script src="../../assets/libs/flatpickr/flatpickr.min.js"></script>
+<script src="../../assets/alertify/alertify.min.js"></script>
+<link rel="stylesheet" href="../../assets/alertify/alertify.min.css"/>
+<link rel="stylesheet" href="../../assets/alertify/default.min.css"/>
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javasript.js"></script>
+</body>
+</html>

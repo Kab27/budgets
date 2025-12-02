@@ -1,0 +1,588 @@
+
+      /*
+       * Définition des variables CSS pour une gestion centralisée des styles
+       */
+      :root {
+         --primary-color: #0078D3;
+         --secondary-color: #3f37c9;
+         --success-color: #28AA91;
+         --danger-color: #F0556C;
+         --warning-color: #fd7e14;
+         --info-color: #17a2b8;
+         --dark-color: #343a40;
+         --light-color: #f8f9fa;
+         --border-radius: 0.5rem;
+         --box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.001);
+         --transition: all 0.3s ease;
+      }
+
+      /* Styles généraux */
+      body {
+         font-family: 'Poppins', sans-serif;
+         background-color: #f5f7fb;
+         color: #495057;
+      }
+
+      /* Conteneur principal */
+      .budget-container {
+         max-width: 800px;
+         margin: 0 auto;
+      }
+
+      /* En-tête */
+      .budget-header {
+        
+         color: white;
+         padding: 1rem;
+         border-radius: var(--border-radius);
+         margin-bottom: 1.5rem;
+         box-shadow: var(--box-shadow);
+         text-align: center;
+         font-weight: 600;
+      }
+      
+      /* Éléments de budget */
+      .budget-item {
+         background-color: white;
+         border-radius: var(--border-radius);
+         margin-bottom: 1rem;
+         overflow: hidden;
+      }
+      
+      .budget-item:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+      }
+      
+      /* En-tête des éléments */
+      .budget-item-header {
+         padding: 1rem;
+         border-bottom: 1px solid #eee;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      
+      .budget-title {
+         font-weight: 600;
+         color: var(--primary-color);
+         margin: 0;
+         font-size: 14px;
+         text-transform: uppercase;
+      }
+      
+      /* Styles des statuts */
+      .budget-status {
+         font-size: 0.8rem;
+         padding: 0.25rem 0.75rem;
+         border-radius: 2rem;
+         font-weight: 500;
+      }
+      
+      .status-paid {
+         background-color: rgba(40, 167, 69, 0.1);
+         color: var(--success-color);
+      }
+      
+      .status-unpaid {
+         background-color: rgba(220, 53, 69, 0.1);
+         color: var(--danger-color);
+      }
+      
+      .status-pending {
+         background-color: rgba(253, 126, 20, 0.1);
+         color: var(--warning-color);
+      }
+      
+      /* Détails des éléments */
+      .budget-details {
+         padding: 1rem;
+          
+         justify-content: space-between;
+      }
+      
+      .budget-amount {
+         font-weight: 600;
+      }
+      
+      .amount-usd {
+         color: var(--success-color);
+      }
+      
+      .amount-cdf {
+         color: var(--primary-color);
+      }
+      
+      .budget-penalty {
+         color: var(--danger-color);
+         font-size: 0.8rem;
+      }
+      
+      /* Cartes de résumé */
+      .summary-cards {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1rem;
+         margin-top: 2rem;
+      }
+      
+      .summary-card {
+         background-color: white;
+         border-radius: var(--border-radius);
+         padding: 1.5rem 1rem;
+         text-align: center;
+         box-shadow: var(--box-shadow);
+      }
+
+      .summary-card-title {
+         font-size: 0.9rem;
+         color: #6c757d;
+         margin-bottom: 0.5rem;
+         text-transform: uppercase;
+         font-weight: 500;
+      }
+
+      .summary-card-amount {
+         font-size: 1.25rem;
+         font-weight: 600;
+         margin-bottom: 0;
+      }
+      .card-total {
+         border-top: 4px solid var(--dark-color);
+      }
+      .card-paid {
+         border-top: 4px solid var(--success-color);
+      }
+      .card-remaining {
+         border-top: 4px solid var(--danger-color);
+      }
+      /* État vide */
+      .empty-state {
+         text-align: center;
+         padding: 3rem 1rem;
+         border-radius: var(--border-radius);
+         box-shadow: var(--box-shadow);
+      }
+      .empty-icon {
+         font-size: 3rem;
+         color: #dee2e6;
+         margin-bottom: 1rem;
+      }
+      .empty-text {
+         color: #6c757d;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+         .summary-cards {
+            grid-template-columns: 1fr;
+         }
+      }
+
+      a span {
+          font-family: calibri;
+      }
+      .nav-second-level li a {
+          font-family: calibri;
+      }
+
+
+                .select2-selection__choice{
+          background-color: transparent!important;
+          border:none!important;
+          border-radius: 4px!important;
+          background-color: #60A885 !important;
+          font-size: 13px;
+      }
+
+      .select2-selection__choice__remove{
+          border: none!important;
+          border-radius: 0!important;
+          padding: 0 2px!important;
+          color: white;
+      }
+
+      .select2-selection__choice__remove:hover{
+          background-color: transparent!important;
+          color: black; 
+          padding: 5px;
+      }
+
+
+   /**
+    * Police personnalisée
+    */
+   @font-face {
+      font-family: Sans;
+      src: url("../../assets/font/Poppins-Regular.ttf");
+   }
+
+   *:not(i, span.menu-arrow) {
+      font-family: Sans !important;
+   }
+
+   body {
+      font-family: Sans !important;
+   }
+
+
+
+   /**
+    * Styles dynamiques basés sur le thème
+    */
+   #nana:hover {
+      background-color: #063C4C;
+      transition-duration: 0.3s;
+   }
+
+   #ok {
+       color: #ffffff;
+   }
+   
+   #ok_2 {
+       color: #ffffff;
+   }
+
+   li:hover a #ok {
+      color: #ffffff !important;
+   }
+
+   #bas {
+      background-color: #003848;
+   }
+
+   #haut {
+      background-color: #ffffff;
+   }
+
+   #text_haut {
+      color: #16182d;
+   }
+
+   #coeur {
+      border: solid #e2e3f1 0.5px;
+      border-radius: 20px;
+   }
+
+   a {
+      cursor: pointer;
+   }
+
+   .container-fluid {
+      padding: 0px !important;
+   }
+
+
+	.form-control{
+		border-radius: 0;
+	}
+
+ 
+.select2-selection__rendered {
+    line-height: 31px !important;
+}
+.select2-container .select2-selection--single {
+    height: 44px !important;
+    border-radius: 0;
+}
+.select2-selection__arrow {
+    height: 33px !important;
+}
+
+
+/* Input field 
+.select2-selection__rendered {  }*/
+    
+/* Around the search field */
+/* (removed empty .select2-search ruleset) */
+    
+/* Search field */
+.select2-search input {
+color: blue; 
+font-weight: normal; 
+  }
+    
+/* Each result */
+.select2-results {
+color: black; 
+font-weight: normal; 
+text-align: justify;
+font-size: 11px;
+text-transform: uppercase;
+  }
+    
+/* Higlighted (hover) result */
+    
+/* Selected option */
+ 
+   a span{
+             font-family: calibri;  
+        }
+        .nav-second-level li a {
+.switch {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.switch + .label {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 18px;
+    min-width: 18px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.switch + .label::before {
+    cursor: pointer;
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 12px;
+    color: #32a3ce;
+    content: "\a0";
+    background-color: #FAFAFA;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 14px;
+    min-width: 16px;
+    margin-right: 1px;
+    position: relative;
+    top: -1px;
+}
+.switch:checked + .label::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #F5F8FC;
+    border-color: #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+/* CSS3 on/off switches */
+.switch + .label {
+    margin: 0 4px;
+    min-height: 24px;
+}
+.switch + .label::before {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 17px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid #CCC;
+    text-align: left;
+    float: left;
+    padding: 0;
+    width: 52px;
+    text-indent: -21px;
+    margin-right: 0;
+    -webkit-transition: text-indent .3s ease;
+    -o-transition: text-indent .3s ease;
+    transition: text-indent .3s ease;
+    top: auto;
+}
+.switch.switch-bootstrap + .label::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    box-shadow: none;
+    border-width: 0;
+    font-size: 16px;
+    background-color: #a9a9a9;
+    color: #F2F2F2;
+    width: 52px;
+    height: 22px;
+    line-height: 21px;
+    text-indent: 32px;
+    -webkit-transition: background 0.1s ease;
+    -o-transition: background 0.1s ease;
+    transition: background 0.1s ease;
+}
+.switch.switch-bootstrap + .label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 12px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border: 4px solid #F2F2F2;
+    -webkit-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+}
+.switch.switch-bootstrap:checked + .label::before {
+    content: "\f00c";
+    text-indent: 6px;
+    color: #FFF;
+    border-color: #b7d3e5;
+}
+.switch-primary > .switch.switch-bootstrap:checked + .label::before {
+    background-color: #337ab7;
+}
+.switch-success > .switch.switch-bootstrap:checked + .label::before {
+    background-color: #5cb85c;
+}
+.switch-danger > .switch.switch-bootstrap:checked + .label::before {
+    background-color: #d9534f;
+}
+.switch-info > .switch.switch-bootstrap:checked + .label::before {
+    background-color: #5bc0de;
+}
+.switch-warning > .switch.switch-bootstrap:checked + .label::before {
+    background-color: #f0ad4e;
+}
+.switch.switch-bootstrap:checked + .label::after {
+    left: 32px;
+    background-color: #FFF;
+    border: 4px solid #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25);
+}
+  text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25);
+}
+.switch-square {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.switch-square + .label {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 18px;
+    min-width: 18px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.switch-square + .label::before {
+    cursor: pointer;
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 12px;
+    color: #32a3ce;
+    content: "\a0";
+    background-color: #FAFAFA;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 14px;
+    min-width: 16px;
+    margin-right: 1px;
+    position: relative;
+    top: -1px;
+}
+.switch-square:checked + .label::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #F5F8FC;
+    border-color: #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+/* CSS3 on/off switches */
+.switch-square + .label {
+    margin: 0 4px;
+    min-height: 24px;
+}
+.switch-square + .label::before {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 17px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid #CCC;
+    text-align: left;
+    float: left;
+    padding: 0;
+    width: 52px;
+    text-indent: -21px;
+    margin-right: 0;
+    -webkit-transition: text-indent .3s ease;
+    -o-transition: text-indent .3s ease;
+    transition: text-indent .3s ease;
+    top: auto;
+}
+.switch-square.switch-bootstrap + .label::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    box-shadow: none;
+    border-width: 0;
+    font-size: 16px;
+    background-color: #a9a9a9;
+    color: #F2F2F2;
+    width: 52px;
+    height: 22px;
+    line-height: 21px;
+    text-indent: 32px;
+    -webkit-transition: background 0.1s ease;
+    -o-transition: background 0.1s ease;
+    transition: background 0.1s ease;
+}
+.switch-square.switch-bootstrap + .label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 12px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border: 4px solid #F2F2F2;
+    -webkit-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+}
+.switch-square.switch-bootstrap:checked + .label::before {
+    content: "\f00c";
+    text-indent: 6px;
+    color: #FFF;
+    border-color: #b7d3e5;
+}
+.switch-primary > .switch-square.switch-bootstrap:checked + .label::before {
+    background-color: #337ab7;
+}
+.switch-success > .switch-square.switch-bootstrap:checked + .label::before {
+    background-color: #5cb85c;
+}
+.switch-danger > .switch-square.switch-bootstrap:checked + .label::before {
+    background-color: #d9534f;
+}
+.switch-info > .switch-square.switch-bootstrap:checked + .label::before {
+    background-color: #5bc0de;
+}
+.switch-warning > .switch-square.switch-bootstrap:checked + .label::before {
+    background-color: #f0ad4e;
+}
+.switch-square.switch-bootstrap:checked + .label::after {
+    left: 32px;
+    background-color: #FFF;
+    border: 4px solid #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25);
+}
+.switch-square.switch-bootstrap + .label::after {
+    border-radius: 2px;
+}
+
